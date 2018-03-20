@@ -23,7 +23,7 @@
 #include <fuse.h>
 #include <errno.h>
 #include <string.h>
-#include <math.h>
+#include <math.h>	// floor
 
 #include <libxml/parser.h>
 #include <libxml/tree.h>
