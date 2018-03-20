@@ -11,7 +11,7 @@ all: $(OBJECTS)
 	$(CC) $(CFLAGS) `pkg-config --cflags fuse` `xml2-config --cflags` -c $<
 
 clean:
-	rm xmlfs $(OBJECTS)
+	rm -f ./xmlfs $(OBJECTS)
 
 install: all
 	@echo installing executable to ${DESTDIR}${PREFIX}/bin
