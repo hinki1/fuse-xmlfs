@@ -1,12 +1,6 @@
-#!/bin/sh
-
-
-# Mount filesystem
-mkdir -p mnt/
-./xmlfs mnt/ -o xmlfile=test.xml
+#!/bin/bash
 
 # Do basic tests
-cd mnt/
 if [ `find 1.root/ -name '*.node' | wc -l` -ne 2 ]; then
     echo "Too many %d.nodes in 1.root";
 fi
@@ -31,7 +25,3 @@ fi
 if [ "`cat 1.root/1.textcontent/#text`" != "some text" ]; then
     echo "Failed to read 1.root/1.textcontent/#text properly";
 fi
-
-cd ..
-fusermount -u mnt
-echo "Done"

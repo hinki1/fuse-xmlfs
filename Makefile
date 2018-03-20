@@ -24,12 +24,4 @@ uninstall:
 	@echo removing executable from ${DESTDIR}${PREFIX}/bin
 	@rm ${DESTDIR}${PREFIX}/bin/xmlfs
 
-test: xmlfs mount test.xml
-	./xmlfs mount -o xmlfile=test.xml
-
-untest: mount
-	fusermount -u mount
-	rmdir ./mount
-
-mount:
-	@mkdir $@
+include test.mk
